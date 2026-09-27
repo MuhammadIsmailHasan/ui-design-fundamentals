@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Day 1 | Challange 1</title>
+
+		<style>
+			:root {
+				--heading-size: 2.5rem;
+				--body-size: 2rem;
+				--label-size: 1.5rem;
+				--value-size: 3rem;
+				--muted-size: 1.2rem;
+
+				--heading-weight: 900;
+				--body-weight: 500;
+				--label-weight: 300;
+				--value-weight: 700;
+				--muted-weight: 200;
+
+				--bg-primary: rgb(231, 228, 228);
+				--bg-surface: rgb(242, 242, 242);
+
+				--color-primary: rgb(65, 65, 218);
+				--color-surface: rgb(96, 96, 214);
+				--color-muted: rgb(56, 56, 155);
+
+				--bg-border: rgb(108, 107, 107);
+				--bg-border-surface: rgb(165, 165, 165);
+
+				--max-width: 1024px;
+			}
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				font-family:
+					system-ui,
+					-apple-system,
+					BlinkMacSystemFont,
+					"Segoe UI",
+					Roboto,
+					Oxygen,
+					Ubuntu,
+					Cantarell,
+					"Open Sans",
+					"Helvetica Neue",
+					sans-serif;
+			}
+
+			main {
+				padding: 1.5rem;
+				background-color: var(--bg-primary);
+				display: flex;
+				flex-direction: column;
+				gap: 2rem;
+			}
+
+			h1 {
+				font-size: var(--heading-size);
+				font-weight: var(--heading-weight);
+				line-height: 2rem;
+				color: var(--color-primary);
+			}
+
+			#dashboard h2 {
+				font-size: var(--body-size);
+				font-weight: var(--body-weight);
+				color: var(--color-surface);
+			}
+
+			h3 {
+				font-size: var(--label-size);
+				font-weight: var(--label-weight);
+				color: var(--color-surface);
+			}
+
+			.nominal {
+				font-size: var(--value-size);
+				font-weight: var(--value-weight);
+				color: var(--color-primary);
+				padding: 0.5rem 0;
+			}
+
+			p {
+				color: var(--color-muted);
+				font-size: var(--muted-size);
+				font-weight: var(--muted-weight);
+				line-break: auto;
+			}
+
+			/* history */
+			#history {
+				display: grid;
+				grid-template-columns: minmax(0, 1fr);
+				gap: 1rem;
+			}
+
+			#history h3 {
+				font-size: var(--label-size);
+				font-weight: var(--label-weight);
+			}
+
+			#bordered h4 {
+				color: var(--color-surface);
+				font-size: var(--muted-size);
+				font-weight: var(--muted-weight);
+			}
+
+			/* card */
+			.card {
+				background-color: rgb(252, 249, 249);
+				border-radius: 8px;
+				border: 1px solid rgb(131, 131, 131);
+				box-shadow: 1px 1px 5px black;
+				padding: 1.5rem;
+			}
+
+			.card:hover {
+				box-shadow: 5px 5px 20px black;
+			}
+
+			.bordered {
+				border: 1px solid var(--bg-border);
+				padding: 2rem;
+				border-radius: 8px;
+				background-color: var(--bg-surface);
+			}
+
+			/* header */
+			header {
+				border-bottom: 1px solid var(--bg-border-surface);
+				position: sticky;
+				top: 0;
+				z-index: 10;
+				background-color: rgb(242 242 242 / 80%);
+				backdrop-filter: blur(8px);
+			}
+
+			header h4 {
+				font-size: var(--muted-size);
+				padding: 1.5rem;
+				color: var(--color-surface);
+			}
+
+			h4 > span {
+				color: var(--color-primary);
+			}
+
+			/* revenue */
+			#revenue {
+				display: grid;
+				grid-template-columns: 1fr;
+				gap: 2rem;
+			}
+
+			/* transaction */
+			#transaction {
+				display: flex;
+				flex-direction: column;
+				gap: 1rem;
+			}
+
+			#order {
+				display: flex;
+				flex-direction: column;
+				gap: 0.5rem;
+			}
+			.order-item h4 {
+				font-size: var(--label-size);
+				color: var(--color-surface);
+			}
+
+			/* activity */
+			#activity {
+				display: flex;
+				flex-direction: column;
+				gap: 1rem;
+			}
+
+			#activity ul {
+				padding-left: 1.5rem;
+			}
+
+			ul li {
+				font-size: var(--muted-size);
+				color: var(--color-muted);
+				font-weight: var(--muted-weight);
+				margin: 0.3rem 0;
+			}
+
+			@media (min-width: 1024px) {
+				#revenue {
+					grid-template-columns: repeat(3, 1fr);
+				}
+
+				#history {
+					grid-template-columns: 1fr 1fr;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<article>
+				<h4><span>Ismail</span> Personal Website</h4>
+			</article>
+		</header>
+		<main>
+			<article id="dashboard">
+				<h1>Dashboard</h1>
+				<h2>Welcome back, Ismail</h2>
+			</article>
+
+			<section id="revenue">
+				<article class="revenue-card card">
+					<h3>Revenue</h3>
+					<h2 class="nominal">Rp 24.500.000</h2>
+					<p>+12.5% this month</p>
+				</article>
+				<article class="order-card card">
+					<h3>Orders</h3>
+					<h2 class="nominal">1.245</h2>
+					<p>+10.5% this month</p>
+				</article>
+				<article class="customer-card card">
+					<h3>Customer</h3>
+					<h2 class="nominal">9.298</h2>
+					<p>+5.5% this month</p>
+				</article>
+			</section>
+
+			<section id="history" class="">
+				<div id="transaction" class="bordered">
+					<h3>Recent Transactions</h3>
+					<div id="order">
+						<div class="order-item">
+							<h4>Order 001</h4>
+							<p>Rp 250.000</p>
+						</div>
+						<div class="order-item">
+							<h4>Order 003</h4>
+							<p>Rp 300.000</p>
+						</div>
+					</div>
+				</div>
+
+				<article id="activity" class="bordered">
+					<h3>Activity</h3>
+					<ul>
+						<li class="activiry-item">User registered</li>
+						<li class="activiry-item">Payment Received</li>
+						<li class="activiry-item">Order Completed</li>
+					</ul>
+				</article>
+			</section>
+		</main>
+	</body>
+</html>
