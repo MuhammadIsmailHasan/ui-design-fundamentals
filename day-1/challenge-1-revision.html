@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Challenge 1 Revision</title>
+
+		<style>
+			:root {
+				--color-primary: #111827;
+				--color-surface: #6b7280;
+
+				--text-heading: 2rem;
+				--text-body: 1rem;
+				--text-value: 1.5rem;
+				--text-label: 0.8rem;
+
+				--bold: 700;
+				--medium: 500;
+				--normal: 400;
+
+				--spacing-1: 0.5rem;
+				--spacing-2: 1rem;
+				--spacing-3: 1.5rem;
+				--spacing-4: 2rem;
+				--spacing-5: 3rem;
+
+				--line-height-low: 1;
+				--line-height-normal: 1.5;
+				--line-height-high: 2;
+			}
+
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			main {
+				padding: var(--spacing-4);
+			}
+
+			/* heading */
+			#heading {
+				margin-top: var(--spacing-4);
+			}
+
+			#heading h1 {
+				font-size: var(--text-heading);
+				font-weight: var(--bold);
+				color: var(--color-primary);
+				margin-bottom: var(--spacing-1);
+			}
+
+			#heading h3 {
+				font-size: var(--text-body);
+				font-weight: var(--normal);
+				line-height: var(--line-height-normal);
+				color: var(--color-surface);
+			}
+
+			/* info */
+			#info {
+				margin-top: var(--spacing-4);
+			}
+
+			#revenue,
+			#order,
+			#customer {
+				margin-bottom: var(--spacing-3);
+			}
+
+			#info h4,
+			#info p {
+				font-size: var(--text-label);
+				font-weight: var(--normal);
+				color: var(--color-surface);
+				margin-bottom: var(--spacing-1);
+			}
+
+			#info h2 {
+				font-size: var(--text-value);
+				font-weight: var(--medium);
+				color: var(--color-primary);
+				margin-bottom: var(--spacing-1);
+				line-height: var(--line-height-normal);
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<section id="heading">
+				<h1>Dashboard</h1>
+				<h3>Welcome back, ismail!</h3>
+			</section>
+
+			<section id="info">
+				<article id="revenue">
+					<h4>Revenue</h4>
+					<h2>Rp 24.000.000</h2>
+					<p>+12.5% this month</p>
+				</article>
+				<article id="order">
+					<h4>Order</h4>
+					<h2>5.200</h2>
+					<p>+1.5% this month</p>
+				</article>
+				<article id="customer">
+					<h4>Customer</h4>
+					<h2>1200</h2>
+					<p>+20% this month</p>
+				</article>
+			</section>
+		</main>
+	</body>
+</html>
